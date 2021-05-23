@@ -36,11 +36,7 @@ const generateResult = function (userid, title) {
 };
 
 // check and generate
-const checkAndGenerate = async function (
-  userIdValue,
-  titleValue,
-  articleValue
-) {
+const checkAndGenerate = function (userIdValue, titleValue, articleValue) {
   // check validation
   if (
     !validateInput(userIdValue, true, true) ||
@@ -62,6 +58,7 @@ const checkAndGenerate = async function (
   // generate output
   // const resultText = generateResult(userId, title); // ***
   const resultText = generateResult(userIdValue, titleValue);
+  console.log(resultText);
   return resultText;
 };
 
