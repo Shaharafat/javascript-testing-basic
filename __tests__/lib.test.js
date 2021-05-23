@@ -1,4 +1,3 @@
-jest.mock("../js/postToServer.js");
 const puppeteer = require("puppeteer");
 
 const {
