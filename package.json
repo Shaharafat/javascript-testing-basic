@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
-    "test": "jest"
+    "test": "jest --watchAll"
   },
   "author": "Shah Arafat",
   "license": "MIT",
