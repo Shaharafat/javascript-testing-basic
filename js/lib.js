@@ -1,4 +1,4 @@
-// const postToServer = require('./postToServer');
+const postToServer = require("./postToServer");
 
 // get user input fields
 const getUserInputs = function () {
@@ -36,7 +36,11 @@ const generateResult = function (userid, title) {
 };
 
 // check and generate
-const checkAndGenerate = function (userIdValue, titleValue, articleValue) {
+const checkAndGenerate = async function (
+  userIdValue,
+  titleValue,
+  articleValue
+) {
   // check validation
   if (
     !validateInput(userIdValue, true, true) ||
@@ -47,18 +51,16 @@ const checkAndGenerate = function (userIdValue, titleValue, articleValue) {
   }
 
   // post to server
-  // const postedResponse = await postToServer({
-  //   title: titleValue,
-  //   body: articleValue,
-  //   userId: userIdValue,
-  // });
+  const postedResponse = await postToServer({
+    title: titleValue,
+    body: articleValue,
+    userId: userIdValue,
+  });
 
-  // const {userId, title} = postedResponse; // ***
+  const { userId, title } = postedResponse;
 
   // generate output
-  // const resultText = generateResult(userId, title); // ***
-  const resultText = generateResult(userIdValue, titleValue);
-  console.log(resultText);
+  const resultText = generateResult(userId, title);
   return resultText;
 };
 
